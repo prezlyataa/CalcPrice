@@ -32,98 +32,134 @@
                 <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 0.8px;">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#about">Calculate</a>
+                            <a href="#" onclick="slowScroll('#main')">Calculate</a>
                         </li>
                         <li>
-                            <a href="#services">How to use</a>
+                            <a href="#" onclick="slowScroll('#how_to')">How to use</a>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="#" onclick="slowScroll('#footer')">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
        </nav>
 
-
-        <div class="container">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Last 5 sales
-                            </a>
-                        </h4>
+        <div id="main">
+            <div class="container">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Last 5 sales
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <h4>Input last 5 sales</h4>
+                                <div id="inputs_1">
+                                    <input id="sold_1" type="text">
+                                    <input id="sold_2" type="text">
+                                    <input id="sold_3" type="text">
+                                    <input id="sold_4" type="text">
+                                    <input id="sold_5" type="text">
+                                </div>
+                                <div class="answer">
+                                    <button class="btn btn-success" onclick="average_5()">Calculate</button>
+                                    <a href="index.html"><button class="btn btn-danger">Clear</button></a>
+                                    <p id="output"></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                            <h4>Input last 5 sales</h4>
-                            <input id="sold_1" type="text">
-                            <input id="sold_2" type="text">
-                            <input id="sold_3" type="text">
-                            <input id="sold_4" type="text">
-                            <input id="sold_5" type="text">
-                            <div class="answer">
-                                <button class="btn btn-success" onclick="average_5()">Calculate</button>
-                                <a href="index.html"><button class="btn btn-danger">Clear</button></a>
-                                <p id="output"></p>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Last 10 sales
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <h4>Input last 10 sales</h4>
+                                <div id="inputs_2">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                    <input type="text">
+                                </div>
+                                <div class="answer">
+                                    <button class="btn btn-success" onclick="average_10()">Calculate</button>
+                                    <a href="index.html"><button class="btn btn-danger">Clear</button></a>
+                                    <p id="output2"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Last n sales
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <label for="number">Enter the number of fields: <input type="text" id="number"></label>
+                                <div id="inputs"></div>
+                                <div class="answer">
+                                    <button class="btn btn-primary" id="add_input" onclick="create_input()">Add inputs</button>
+                                    <button class="btn btn-success" id="calc" onclick="average_n()">Calculate</button>
+                                    <a href="index.html"><button class="btn btn-danger">Clear</button></a>
+                                    <p id="outputn"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Last 10 sales
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
-                            <h4>Input last 10 sales</h4>
-                            <input id="sold_11" type="text">
-                            <input id="sold_22" type="text">
-                            <input id="sold_33" type="text">
-                            <input id="sold_44" type="text">
-                            <input id="sold_55" type="text">
-                            <input id="sold_6" type="text">
-                            <input id="sold_7" type="text">
-                            <input id="sold_8" type="text">
-                            <input id="sold_9" type="text">
-                            <input id="sold_10" type="text">
-                            <div class="answer">
-                                <button class="btn btn-success" onclick="average_10()">Calculate</button>
-                                <a href="index.html"><button class="btn btn-danger">Clear</button></a>
-                                <p id="output2"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingThree">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Last n sales
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                        <div class="panel-body">
-                            <label for="number">Enter the number of fields: <input type="text" id="number"></label>
-                            <div id="inputs"></div>
-                            <div class="answer">
-                                <button class="btn btn-primary" id="add_input" onclick="create_input()">Add inputs</button>
-                                <button class="btn btn-success" id="calc" onclick="average_n()">Calculate</button>
-                                <a href="index.html"><button class="btn btn-danger">Clear</button></a>
-                                <p id="outputn"></p>
-                            </div>
-                        </div>
-                    </div>
             </div>
         </div>
 
+        <div id="how_to">
+            <div class="container">
+                <div class="info">
+                    <p>If you need to calculate average price your item, first of all, you need:</p>
+                    <ul>
+                        <li>Open 'Community Market'</li>
+                        <li>View the latest prices on the chart</li>
+                        <li>Put them in the fields</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div id="footer">
+                <div class="container">
+                    <div class="reserved">
+                        <p>CalcPrice | All rights reserved </p>
+                        <div class="social">
+                            <ul>
+                                <li><a href="https://vk.com/id83814344"><img src="img/vk.ico" alt="img"></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100015041103694"><img src="img/fb.ico" alt="img"></a></li>
+                                <li><a href="https://steamcommunity.com/profiles/76561198086814849/"><img src="img/steam.ico" alt="img"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
         <script src="js/main.js"></script>
